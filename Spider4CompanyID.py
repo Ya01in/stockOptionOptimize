@@ -1,3 +1,6 @@
+# yaolin
+# first spider 
+# getting the company and their id using requests
 from cgitb import text
 import pandas as pd
 import requests 
@@ -22,6 +25,7 @@ target = text[0]
 target.columns = target.iloc[0,:]
 target = target.iloc[1:, :].copy()
 
+## split value using lamda 
 target['代號'] = target['有價證券代號及名稱'].apply(
     lambda target: target.split()[0]).copy()
 target['股票名稱'] = target['有價證券代號及名稱'].apply(
